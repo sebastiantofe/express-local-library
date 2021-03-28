@@ -11,8 +11,9 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 
-const mongoDB = 'mongodb+srv://TofeAdmin:Sebastians@learning.op386.mongodb.net/local_library?retryWrites=true&w=majority'
-// const mongoDB = 'mongodb://TofeLibrary:sebastians@127.0.0.1:27017/localLibrary';
+const mongoDB = 'mongodb+srv://TofeAdmin:<password>@learning.op386.mongodb.net/local_library?retryWrites=true&w=majority';
+
+// const mongoDB = 'mongodb://TofeLibrary:<password>@127.0.0.1:27017/localLibrary';
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
