@@ -8,8 +8,8 @@ block content
 
     each book in book_list
       li
-        |  (#{book.author.name})
         a(href=book.url)  #{book.title}
+        |  (#{book.author.name})
 	
     else
       li  There are no books.
