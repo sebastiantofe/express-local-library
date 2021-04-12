@@ -115,7 +115,7 @@ exports.genre_delete_get = function (req, res, next) {
 	},	function (err, results) {
 			if(err) { return next(err)};
 			if(results.genre==null) {
-				res.redirect('catalog/genres');
+				res.redirect('/catalog/genres');
 			};
 
 			//Successful, so render
