@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+const compression = require('compression');
+const helmet = require('helmet');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -13,6 +15,7 @@ const password =  require('./password');
 
 
 var app = express();
+
 
 
 const mongoDB = `mongodb+srv://TofeAdmin:${password}@learning.op386.mongodb.net/local_library?retryWrites=true&w=majority`;
@@ -38,6 +41,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(compression()); //Compress all routes
+app.use(helmet());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
