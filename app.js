@@ -18,7 +18,8 @@ var app = express();
 
 
 
-const mongoDB = `mongodb+srv://TofeAdmin:${password}@learning.op386.mongodb.net/local_library?retryWrites=true&w=majority`;
+const dev_db_url = `mongodb+srv://TofeAdmin:${password}@learning.op386.mongodb.net/local_library?retryWrites=true&w=majority`;
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 // const mongoDB = 'mongodb://TofeLibrary:<password>@127.0.0.1:27017/localLibrary';
 
